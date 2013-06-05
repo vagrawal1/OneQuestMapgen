@@ -24,9 +24,7 @@ public class Tile extends Square {
 	}
 
 	public void onClicked(Graphics g, MouseEvent e, ArrayList<ArrayList<Tile>> map, int i, int j) {
-		
-		g.drawString("i: " + i + "j: " + j, j*27, i*27);
-		
+				
 		switch (e.getModifiers()) {
 		case InputEvent.BUTTON1_MASK:
 			if (tileValue < tiles.length - 1)
@@ -34,15 +32,16 @@ public class Tile extends Square {
 			break;
 		case InputEvent.BUTTON2_MASK:
 		{
-			if (map.get(i+1).get(j).tileValue == 0)
-				System.out.println("below is blank");
-			if (map.get(i).get(j+1).tileValue == 0)
-				System.out.println("right is blank");
-			if (map.get(i).get(j-1).tileValue== 0)
-				System.out.println("left is blank");
-			if (map.get(i-1).get(j).tileValue == 0)
-				System.out.println("Top is blank");
+//			if (map.get(i+1).get(j).tileValue == 0) 
+//				System.out.println("below is blank");
+//			if (map.get(i).get(j+1).tileValue == 0)
+//				System.out.println("right is blank");
+//			if (map.get(i).get(j-1).tileValue== 0)
+//				System.out.println("left is blank");
+//			if (map.get(i-1).get(j).tileValue == 0)
+//				System.out.println("Top is blank");
 			
+			//corner pieces
 			if ((map.get(i+1).get(j).tileValue == 3) && (map.get(i).get(j+1).tileValue == 2))
 				tileValue = 14;
 			if ((map.get(i+1).get(j).tileValue == 3) && (map.get(i).get(j-1).tileValue == 2))
@@ -50,8 +49,17 @@ public class Tile extends Square {
 			if ((map.get(i-1).get(j).tileValue == 3) && (map.get(i).get(j-1).tileValue == 2))
 				tileValue = 13;
 			if ((map.get(i-1).get(j).tileValue == 3) && (map.get(i).get(j+1).tileValue == 2))
-				tileValue = (int) 15.0;
-						
+				tileValue = 15;
+			
+			//t shaped pieces
+			if ((map.get(i-1).get(j).tileValue == 3) && (map.get(i).get(j-1).tileValue== 2) && (map.get(i).get(j+1).tileValue == 2))
+				tileValue = 4;
+			if ((map.get(i+1).get(j).tileValue == 3) && (map.get(i).get(j-1).tileValue== 2) && (map.get(i).get(j+1).tileValue == 2))
+				tileValue = 5;
+			if ((map.get(i-1).get(j).tileValue == 3) && (map.get(i+1).get(j).tileValue == 3) && (map.get(i).get(j+1).tileValue == 2))
+				tileValue = 7;
+			if ((map.get(i-1).get(j).tileValue == 3) && (map.get(i+1).get(j).tileValue == 3) && (map.get(i).get(j-1).tileValue == 2))
+				tileValue = 6;
 		}
 			break;
 		case InputEvent.BUTTON3_MASK:
@@ -60,7 +68,7 @@ public class Tile extends Square {
 			break;
 		}
 		
-		System.out.println(tileValue);
+		//System.out.println(tileValue);
 		g.drawImage(tiles[tileValue], getX(), getY(), getDimension(), getDimension(), null);
 	}
 	
@@ -76,7 +84,7 @@ public class Tile extends Square {
 		case InputEvent.BUTTON1_MASK: {
 			if (!isEqualT(mouseLastX, e.getX(), 1)
 					&& isEqualT(mouseLastY, e.getY(), 8)) {
-				System.out.println("dragged");
+				//System.out.println("dragged");
 				if (tileValue == 3)
 					tileValue = 1;
 				else
@@ -85,7 +93,7 @@ public class Tile extends Square {
 
 			if (!isEqualT(mouseLastY, e.getY(), 1)
 					&& isEqualT(mouseLastX, e.getX(), 8)) {
-				System.out.println("dragged");
+				//System.out.println("dragged");
 				if (tileValue == 2)
 					tileValue = 1;
 				else
@@ -98,8 +106,6 @@ public class Tile extends Square {
 		} break;
 		default: break;
 		}
-		
-
 		
 		g.drawImage(tiles[tileValue], getX(), getY(), getDimension(), getDimension(), null);
 		
