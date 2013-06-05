@@ -12,11 +12,9 @@ As it stands right now, the program will load a tileset into memory, which can b
 So anyway, after the tileset is loaded, you can freely draw on the tiles and have them change as you draw. The little red square in the top left corner is the save button. Dragging horizontally will create horizontal tiles; similarly, dragging vertically will create vertical tiles. You've gotta drag a little quickly (and straight), otherwise the program won't recognize it as a line and it won't draw it. You'll figure it out after you use it for a minute or two. The controls are specified below: 
 
 + **Left Click:** Increment the tile value by 1
-
 + **Right Click:** Decrement the tile value by 1
-
++ **Center (Mouse Wheel) Click:** If you've got a vertical line and a horizontal line that meet at a corner, you can middle click and the program will automatically put the correct tile in place. That should save you the trouble of having to click through 15 of the tiles.
 + **Left Click + Drag:** Depending on direction, tile will become either horizontal or vertical path
-
 + **Right Click + Drag:** Will clear any tile (back to tile value of 0/background). Use with caution.
 
 
