@@ -25,17 +25,41 @@ public class Tile extends Square {
 
 	public void onClicked(Graphics g, MouseEvent e, ArrayList<ArrayList<Tile>> map, int i, int j) {
 		
-		switch (e.getModifiers()){
+		g.drawString("i: " + i + "j: " + j, j*27, i*27);
+		
+		switch (e.getModifiers()) {
 		case InputEvent.BUTTON1_MASK:
-			if (tileValue < tiles.length -1 )
+			if (tileValue < tiles.length - 1)
 				tileValue++;
 			break;
+		case InputEvent.BUTTON2_MASK:
+		{
+			if (map.get(i+1).get(j).tileValue == 0)
+				System.out.println("below is blank");
+			if (map.get(i).get(j+1).tileValue == 0)
+				System.out.println("right is blank");
+			if (map.get(i).get(j-1).tileValue== 0)
+				System.out.println("left is blank");
+			if (map.get(i-1).get(j).tileValue == 0)
+				System.out.println("Top is blank");
+			
+			if ((map.get(i+1).get(j).tileValue == 3) && (map.get(i).get(j+1).tileValue == 2))
+				tileValue = 14;
+			if ((map.get(i+1).get(j).tileValue == 3) && (map.get(i).get(j-1).tileValue == 2))
+				tileValue = 12;
+			if ((map.get(i-1).get(j).tileValue == 3) && (map.get(i).get(j-1).tileValue == 2))
+				tileValue = 13;
+			if ((map.get(i-1).get(j).tileValue == 3) && (map.get(i).get(j+1).tileValue == 2))
+				tileValue = (int) 15.0;
+						
+		}
+			break;
 		case InputEvent.BUTTON3_MASK:
-			if (tileValue > 0 )
+			if (tileValue > 0)
 				tileValue--;
 			break;
 		}
-		//asdf
+		
 		System.out.println(tileValue);
 		g.drawImage(tiles[tileValue], getX(), getY(), getDimension(), getDimension(), null);
 	}

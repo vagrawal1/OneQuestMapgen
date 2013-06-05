@@ -9,7 +9,7 @@ import javax.imageio.ImageIO;
 public final class TileSet {
 	
 	ConcurrentHashMap<String, BufferedImage[]> container = new ConcurrentHashMap<String, BufferedImage[]>(11);
-	BufferedImage[] grasslands = new BufferedImage[12];
+	BufferedImage[] grasslands = new BufferedImage[16];
 	
 	public TileSet(){
 		
@@ -27,7 +27,12 @@ public final class TileSet {
 			grasslands[8] = ImageIO.read(new URL("http://i675.photobucket.com/albums/vv118/va023/OneQuest/TopEnd_zps4b695dbe.png"));	
 			grasslands[9] = ImageIO.read(new URL("http://i675.photobucket.com/albums/vv118/va023/OneQuest/BottomEnd_zpscd0bb870.png"));
 			grasslands[10] = ImageIO.read(new URL("http://i675.photobucket.com/albums/vv118/va023/OneQuest/LeftEnd_zps27be6c45.png"));
-			grasslands[11] = ImageIO.read(new URL("http://i675.photobucket.com/albums/vv118/va023/OneQuest/RightEnd_zpsd12f9608.png"));			
+			grasslands[11] = ImageIO.read(new URL("http://i675.photobucket.com/albums/vv118/va023/OneQuest/RightEnd_zpsd12f9608.png"));
+			grasslands[12] = ImageIO.read(new URL("http://i675.photobucket.com/albums/vv118/va023/OneQuest/2WayLeftBottom_zps7f65c646.png"));
+			grasslands[13] = ImageIO.read(new URL("http://i675.photobucket.com/albums/vv118/va023/OneQuest/2WayLeftTop_zpsea19876a.png"));
+			grasslands[14] = ImageIO.read(new URL("http://i675.photobucket.com/albums/vv118/va023/OneQuest/2WayRightBottom_zps0ff5fc4a.png"));
+			grasslands[15] = ImageIO.read(new URL("http://i675.photobucket.com/albums/vv118/va023/OneQuest/2WayRightTop_zps8bf3d629.png"));
+			
 		}
 	
 		catch (Exception e) {
