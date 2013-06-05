@@ -2,11 +2,12 @@ package OneQuestMapgen;
 
 import java.awt.event.MouseEvent;
 import java.awt.event.MouseListener;
+import java.awt.event.MouseMotionListener;
 import java.util.ArrayList;
 
 import tiles.Tile;
 
-public class MouseEventListener implements MouseListener {
+public class MouseEventListener implements MouseListener, MouseMotionListener {
 
 	OneQuestMapgen instance;
 	ArrayList<ArrayList<Tile>> map;
@@ -54,6 +55,31 @@ public class MouseEventListener implements MouseListener {
 	public void mouseReleased(MouseEvent e) {
 		// TODO Auto-generated method stub
 
+	}
+
+	@Override
+	public void mouseDragged(MouseEvent arg0) {
+		
+		System.out.println("Mouse Dragged: " + arg0.getX() + " , " + arg0.getY());
+//		map = instance.getMap();
+//		for (int i = 0; i < map.size(); i++) {
+//			for (int j = 0; j < map.get(i).size(); j++)
+//				if (map.get(i).get(j).bounds(arg0)) {
+//					map.get(i).get(j).onClicked(instance.getGraphics());
+//				}
+//		}
+//
+//		if (arg0.getX() <= 10 && arg0.getY() <= 10) {
+//			instance.save.onClicked(instance.getGraphics(), instance.map);
+//		}
+		
+	}
+
+	@Override
+	public void mouseMoved(MouseEvent arg0) {
+		// TODO Auto-generated method stub
+		System.out.println("Mouse Moved: " + arg0.getX() + " , " + arg0.getY());
+		
 	}
 
 }
