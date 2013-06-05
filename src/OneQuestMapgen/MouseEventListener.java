@@ -42,7 +42,7 @@ public class MouseEventListener implements MouseListener, MouseMotionListener {
 		for (int i = 0; i < map.size(); i++) {
 			for (int j = 0; j < map.get(i).size(); j++)
 				if (map.get(i).get(j).bounds(e)) {
-					map.get(i).get(j).onClicked(instance.getGraphics(), e);
+					map.get(i).get(j).onClicked(instance.getGraphics(), e, map, i, j);
 				}
 		}
 

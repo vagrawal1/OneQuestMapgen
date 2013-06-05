@@ -4,6 +4,7 @@ import java.awt.Graphics;
 import java.awt.event.InputEvent;
 import java.awt.event.MouseEvent;
 import java.awt.image.BufferedImage;
+import java.util.ArrayList;
 	
 	@SuppressWarnings("serial")
 
@@ -22,7 +23,7 @@ public class Tile extends Square {
 		g.drawImage(tiles[tileValue], getX(), getY(), getDimension(), getDimension(), null);		
 	}
 
-	public void onClicked(Graphics g, MouseEvent e) {
+	public void onClicked(Graphics g, MouseEvent e, ArrayList<ArrayList<Tile>> map, int i, int j) {
 		
 		switch (e.getModifiers()){
 		case InputEvent.BUTTON1_MASK:
@@ -32,9 +33,9 @@ public class Tile extends Square {
 		case InputEvent.BUTTON3_MASK:
 			if (tileValue > 0 )
 				tileValue--;
-			break;					
+			break;
 		}
-		
+		//asdf
 		System.out.println(tileValue);
 		g.drawImage(tiles[tileValue], getX(), getY(), getDimension(), getDimension(), null);
 	}
