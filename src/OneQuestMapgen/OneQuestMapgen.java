@@ -26,7 +26,13 @@ public class OneQuestMapgen extends JApplet{
 	}
 	
 	public void start(){
-		this.addMouseListener(new MouseEventListener(this));
+		
+		MouseEventListener mel = new MouseEventListener(this);
+		KeyEventListener kel = new KeyEventListener(this);
+		
+		addMouseListener(mel);
+		addMouseMotionListener(mel);
+		addKeyListener(kel);
 		
 		int tileSize = tileSet.get("grasslands")[1].getHeight();
 		

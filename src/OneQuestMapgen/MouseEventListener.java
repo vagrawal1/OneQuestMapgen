@@ -18,18 +18,6 @@ public class MouseEventListener implements MouseListener, MouseMotionListener {
 
 	@Override
 	public void mouseClicked(MouseEvent e) {
-		System.out.println(e.getX() + " , " + e.getY());
-		map = instance.getMap();
-		for (int i = 0; i < map.size(); i++) {
-			for (int j = 0; j < map.get(i).size(); j++)
-				if (map.get(i).get(j).bounds(e)) {
-					map.get(i).get(j).onClicked(instance.getGraphics());
-				}
-		}
-
-		if (e.getX() <= 10 && e.getY() <= 10) {
-			instance.save.onClicked(instance.getGraphics(), instance.map);
-		}
 
 	}
 
@@ -47,7 +35,19 @@ public class MouseEventListener implements MouseListener, MouseMotionListener {
 
 	@Override
 	public void mousePressed(MouseEvent e) {
-		// TODO Auto-generated method stub
+		System.out.println(e.getX() + " , " + e.getY());
+		map = instance.getMap();
+		for (int i = 0; i < map.size(); i++) {
+			for (int j = 0; j < map.get(i).size(); j++)
+				if (map.get(i).get(j).bounds(e)) {
+					map.get(i).get(j).onClicked(instance.getGraphics(), e);
+				}
+		}
+
+		if (e.getX() <= 10 && e.getY() <= 10) {
+			instance.save.onClicked(instance.getGraphics(), instance.map);
+		}
+
 
 	}
 
@@ -60,7 +60,7 @@ public class MouseEventListener implements MouseListener, MouseMotionListener {
 	@Override
 	public void mouseDragged(MouseEvent arg0) {
 		
-		System.out.println("Mouse Dragged: " + arg0.getX() + " , " + arg0.getY());
+		//System.out.println("Mouse Dragged: " + arg0.getX() + " , " + arg0.getY());
 //		map = instance.getMap();
 //		for (int i = 0; i < map.size(); i++) {
 //			for (int j = 0; j < map.get(i).size(); j++)
@@ -78,7 +78,7 @@ public class MouseEventListener implements MouseListener, MouseMotionListener {
 	@Override
 	public void mouseMoved(MouseEvent arg0) {
 		// TODO Auto-generated method stub
-		System.out.println("Mouse Moved: " + arg0.getX() + " , " + arg0.getY());
+		//System.out.println("Mouse Moved: " + arg0.getX() + " , " + arg0.getY());
 		
 	}
 
