@@ -20,6 +20,8 @@ So anyway, after the tileset is loaded, you can freely draw on the tiles and hav
 + **Right Click + Drag:** Will clear any tile (back to tile value of 0/background). Use with caution.
 
 
+**IMPORTANT:** The program will create a file map.txt in the bin/ folder (or wherever the program is being executed from). If that map file exists already IT WILL BE OVERWRITTEN. If you've got important work saved as the map make sure to move the file after you've saved it. Don't wait until it is too late. Only you can prevent forest fires.
+
 ##Known Issues
 
 1. The save button will disappear after the first click of the save button. Maybe it's not an issue, but it's something that should be known.
