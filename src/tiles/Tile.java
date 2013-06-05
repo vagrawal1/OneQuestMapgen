@@ -26,7 +26,8 @@ public class Tile extends Square {
 		
 		switch (e.getModifiers()){
 		case InputEvent.BUTTON1_MASK:
-			tileValue++;
+			if (tileValue < tiles.length -1 )
+				tileValue++;
 			break;
 		case InputEvent.BUTTON3_MASK:
 			if (tileValue > 0 )

@@ -9,7 +9,7 @@ import javax.imageio.ImageIO;
 public final class TileSet {
 	
 	ConcurrentHashMap<String, BufferedImage[]> container = new ConcurrentHashMap<String, BufferedImage[]>(11);
-	BufferedImage[] grasslands = new BufferedImage[11];
+	BufferedImage[] grasslands = new BufferedImage[12];
 	
 	public TileSet(){
 		

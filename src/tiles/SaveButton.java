@@ -29,7 +29,7 @@ public class SaveButton extends Square {
 		
 		PrintWriter out = null;
 		try {
-			out = new PrintWriter(new FileWriter("C:\\Users\\Vasu\\Desktop\\map.txt"));
+			out = new PrintWriter(new FileWriter("map.txt"));
 		} catch (IOException e) {
 			// TODO Auto-generated catch block
 			e.printStackTrace();
@@ -37,31 +37,53 @@ public class SaveButton extends Square {
 				
 		for(int i = 0; i < map.size(); i++){
 			for(int j = 0; j < map.get(i).size(); j++){
-				out.print(map.get(i).get(j).tileValue);
+				out.print(toString(map.get(i).get(j).tileValue));
 			}
 			out.println();
 		}
 		
-//		int numberCompleted = 1;
-//		for (int i = 0; i < map.size(); i++){
-//			if (numberCompleted == 0){
-//				out.print(map.get(i).tileValue);
-//			}	
-//			
-//			if (numberCompleted != 0 && numberCompleted%36 != 0)
-//				out.print(map.get(i).tileValue);
-//			else //if (numberCompleted %36 == 0 && numberCompleted != 0)
-//				out.println(map.get(i).tileValue);
-//			
-//			numberCompleted++;
-//			
-//		}
-
 		out.close();
 		
 		g.drawImage(tiles[tileValue], getX(), getY(), getDimension(), getDimension(), null);
 	}
 	
+	public String toString(int v) {
+		
+		String toReturn = "";
+
+		switch (v){
+			case 10: toReturn = "a"; break;
+			case 11: toReturn = "b"; break;
+			case 12: toReturn = "c"; break;
+			case 13: toReturn = "d"; break;
+			case 14: toReturn = "e"; break;
+			case 15: toReturn = "f"; break;
+			case 16: toReturn = "g"; break;
+			case 17: toReturn = "h"; break;
+			case 18: toReturn = "i"; break;
+			case 19: toReturn = "j"; break;
+			case 20: toReturn = "k"; break;
+			case 21: toReturn = "l"; break;
+			case 22: toReturn = "m"; break;
+			case 23: toReturn = "n"; break;
+			case 24: toReturn = "o"; break;
+			case 25: toReturn = "p"; break;
+			case 26: toReturn = "q"; break;
+			case 27: toReturn = "r"; break;
+			case 28: toReturn = "s"; break;
+			case 29: toReturn = "t"; break;
+			case 30: toReturn = "u"; break;
+			case 31: toReturn = "v"; break;
+			case 32: toReturn = "w"; break;
+			case 33: toReturn = "x"; break;
+			case 34: toReturn = "y"; break;
+			case 35: toReturn = "z"; break;		
+			default: toReturn = Integer.toString(v); break;
+		}
+		
+		return toReturn;
+	}
+
 	public boolean bounds(MouseEvent e){
 		if (e.getX() <= getX() + getDimension()  && e.getX() >= getX() && e.getY() <= getY() + getDimension() && e.getY() >= getY())
 			return true;
