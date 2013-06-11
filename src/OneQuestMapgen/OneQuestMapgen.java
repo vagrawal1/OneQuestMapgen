@@ -15,7 +15,7 @@ public class OneQuestMapgen extends JFrame {
     
     ArrayList<ArrayList<Tile>> map = new ArrayList<ArrayList<Tile>>();
     TileSet tileSet = new TileSet();
-    SaveButton save = new SaveButton(0,0,10,tileSet.get("grasslands"));
+    SaveButton save = new SaveButton(0, 0, 10, tileSet.get("grasslands"));
 
     public static void main(String[] args) {
         instance = new OneQuestMapgen();
@@ -23,7 +23,7 @@ public class OneQuestMapgen extends JFrame {
         instance.start();
     }
 
-    public void init(){
+    public void init() {
         this.setSize(950,600);
         this.setVisible(true);
         this.setTitle("OneQuest Map Generator");
@@ -48,6 +48,8 @@ public class OneQuestMapgen extends JFrame {
             }
             map.add(temp);
         }
+
+        System.out.println("Finished loading");
     }
     
     public void paint(Graphics g){
