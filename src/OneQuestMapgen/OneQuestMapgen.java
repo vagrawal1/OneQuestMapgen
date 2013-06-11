@@ -8,21 +8,26 @@ import tiles.SaveButton;
 import tiles.Tile;
 import tiles.TileSet;
 
-public class OneQuestMapgen extends JApplet{
-
-	/**
-	 * 
-	 */
+public class OneQuestMapgen extends JFrame {
 	
 	private static final long serialVersionUID = 1L;
 	public static OneQuestMapgen instance;
 	
 	ArrayList<ArrayList<Tile>> map = new ArrayList<ArrayList<Tile>>();
 	TileSet tileSet = new TileSet();
-	SaveButton save = null;
-	
+	SaveButton save = new SaveButton(0,0,10,tileSet.get("grasslands"));
+
+    public static void main(String[] args) {
+        instance = new OneQuestMapgen();
+        instance.init();
+        instance.start();
+    }
+
 	public void init(){
 		this.setSize(950,600);
+        this.setVisible(true);
+        this.setTitle("OneQuest Map Generator");
+        this.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
 	}
 	
 	public void start(){
@@ -43,8 +48,6 @@ public class OneQuestMapgen extends JApplet{
 			}
 			map.add(temp);
 		}
-		
-		save = new SaveButton(0,0,10,tileSet.get("grasslands"));
 	}
 	
 	public void paint(Graphics g){

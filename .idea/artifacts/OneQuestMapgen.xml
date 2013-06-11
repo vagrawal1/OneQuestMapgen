@@ -1,0 +1,8 @@
+<component name="ArtifactManager">
+  <artifact type="jar" build-on-make="true" name="OneQuestMapgen">
+    <output-path>$PROJECT_DIR$/out/artifacts/OneQuestMapgen</output-path>
+    <root id="archive" name="OneQuestMapgen.jar">
+      <element id="module-output" name="OneQuestMapgen" />
+    </root>
+  </artifact>
+</component>
