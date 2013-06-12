@@ -37,6 +37,7 @@ public class MouseEventListener implements MouseListener, MouseMotionListener {
 
 	@Override
 	public void mousePressed(MouseEvent e) {
+		//System.out.println(e.getX() + " , " + e.getY());
 		map = instance.getMap();
 		for (int i = 0; i < map.size(); i++) {
 			for (int j = 0; j < map.get(i).size(); j++)
@@ -45,10 +46,8 @@ public class MouseEventListener implements MouseListener, MouseMotionListener {
 				}
 		}
 
-        System.out.println(e.getX() + ", " + e.getY());
-		if (e.getX() <= 15 && e.getY() <= 35) {
+		if (e.getX() <= 10 && e.getY() <= 10) {
 			instance.save.onClicked(instance.getGraphics(), instance.map);
-            System.out.println("Saving...");
 		}
 		
 		mouseLastX = e.getX();

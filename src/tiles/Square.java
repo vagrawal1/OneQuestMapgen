@@ -2,7 +2,7 @@ package tiles;
 
 import javax.swing.JLabel;
 
-public abstract class Square extends JLabel {
+public abstract class Square extends JLabel{
 	
 	/**
 	 * 
